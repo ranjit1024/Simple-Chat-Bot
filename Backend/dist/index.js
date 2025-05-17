@@ -53,5 +53,5 @@ wss.on('connection', (socket) => {
             }
         }
     });
-    socket.send("connectd to server");
+    socket.send("connected to server");
 });
