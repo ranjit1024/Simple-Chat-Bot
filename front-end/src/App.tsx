@@ -6,27 +6,11 @@ import {
   useNavigate,
 } from "react-router-dom";
 import { Chat } from "./chat";
-import { use, useEffect, useState } from "react";
+
 
 function App() {
-  const [socket,setSocket] = useState<WebSocket | null>(null);
-  const [message, setMessage] = useState<any[]>([]);
-  useEffect(()=>{
-    const socket = new WebSocket('ws://localhost:8080/');
-    socket.onopen = ()=>{
-      console.log('connected')
-      setSocket(socket)
-    }
-    socket.onmessage = (message) =>{
-      setMessage((m:any) => [...m, message.data])
-      console.log('Received message', message.data)
-    }
-  },[])
-  if(!socket){
-    return <div>
-      "Connecting to socker server..."
-    </div>
-  }
+  
+ 
   return (
     <>
       <BrowserRouter>
